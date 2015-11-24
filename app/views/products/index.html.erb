@@ -1,1 +1,19 @@
-<h1>Home page</h1>
+<div class="jumbotron">
+  <h1>Ryan's Garage Sale <small>Browse, Buy, or Swap</small></h1>
+</div>
+
+<div class="row">
+  <% @product.each do |book| %>
+    <div class="col-md-3">  
+      <div class="thumbnail">
+        <div class="image-container">
+          <img src=<%= book.images[0].image1 %> alt="...">
+        </div>
+        <h3><%= book.name %></h3>
+        <p><%= book.description %></p>
+        <p><%= book.price %></p>
+        <p><%= book.sale_message %></p> 
+      </div>          
+    </div> 
+  <% end %> 
+</div>     

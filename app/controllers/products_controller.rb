@@ -10,6 +10,7 @@ class ProductsController < ApplicationController
 
     if params[:discount]
       @product = Product.where("price < ?", 2)
+    end
   end
 
   def new
@@ -21,7 +22,7 @@ class ProductsController < ApplicationController
       price: params[:price],
       image: params[:image],
       description: params[:description]
-      user_id: current_user.id
+      #user_id: current_user.id
       )
     flash[:success] = "You have successfully added a product!"
     redirect_to '/products'
