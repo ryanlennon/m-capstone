@@ -3,16 +3,16 @@
 </div>
 
 <div class="row">
-  <% @product.each do |book| %>
+  <% @product.each do |item| %>
     <div class="col-md-3">  
       <div class="thumbnail">
         <div class="image-container">
-          <img src=<%= book.images[0].image1 %> alt="...">
+          
         </div>
-        <h3><%= book.name %></h3>
-        <p><%= book.description %></p>
-        <p><%= book.price %></p>
-        <p><%= book.sale_message %></p> 
+        <h3><%= item.name %></h3>
+        <p><%= item.description %></p>
+        <p><%= item.price %></p>
+        <p><%= item.sale_message %></p> 
       </div>          
     </div> 
   <% end %> 
