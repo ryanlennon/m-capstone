@@ -43,7 +43,7 @@ class ProductsController < ApplicationController
 
   def update
     @product = Product.find_by(id: params[:id])
-    product.update(
+    @product.update(
       name: params[:name],
       price: params[:price],
       image: params[:image],

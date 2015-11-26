@@ -1,4 +1,5 @@
 class Product < ActiveRecord::Base
+  has_many :orders
 
   SALES_TAX = 0.09
   DISCOUNT_THRESHOLD = 50

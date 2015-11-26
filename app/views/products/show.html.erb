@@ -7,11 +7,10 @@
     <h3>Current price: <%= @product.price %></h3>
     <img src= <%= @product.image.first %> alt="...">
     <h3><%= @product.description %></h3>
-    <p> Supplied by: <%= @product.supplier.name %></p>
     <p> Special: <%= @product.sale_message %></p>
 
-    <%= link_to "Edit comic book", "/products/#{@product.id}/edit" %>
-    <%= link_to "Delete comic book", "/products/#{@product.id}", method: :delete %>
+    <%= link_to "Edit this product", "/products/#{@product.id}/edit" %>
+    <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %>
     <%= link_to "Back to home", "/products" %>
 
     </div>
