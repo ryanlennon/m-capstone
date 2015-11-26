@@ -1,13 +1,26 @@
+<%= form_tag '/orders', method: :post do %>
 <div class="container-fluid">
+
   <div class="row">
     <div class="change">
-   
+    
     <h1>Products</h1>
     <h3>Name: <%= @product.name %></h3>
     <h3>Current price: <%= @product.price %></h3>
     <img src= <%= @product.image.first %> alt="...">
     <h3><%= @product.description %></h3>
     <p> Special: <%= @product.sale_message %></p>
+
+    
+    
+        <div class="form_group">
+            <%= label_tag :quantity %></p>
+            <%= text_field_tag :quantity, nil, class: 'form-control', placeholder: "Enter quantity" %>
+            <div>
+                <%= button_tag "Buy Now!", class: 'btn btn-default' %>
+            </div>
+        </div>
+    <% end %>
 
     <%= link_to "Edit this product", "/products/#{@product.id}/edit" %>
     <%= link_to "Delete this product", "/products/#{@product.id}", method: :delete %>
