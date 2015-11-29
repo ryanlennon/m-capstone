@@ -1,21 +1,21 @@
 class OrdersController < ApplicationController
 
   def create
-    @Order = Order.create(
+
+
+    @order = Order.create(
       quantity: params[:quantity],
       product_id: params[:product_id],
-      
-      user_id: 1 #change this with devise later
+      #user_id: current_user.id
       )
 
-    
-    @quantity = Order.last.quantity
-    render :index
-
+    redirect_to "/orders/#{order.id}"
 
   end
 
-  def new
+  def show
+    @order = Order.find_by(id: params[:id])
+
   end
 
 end
